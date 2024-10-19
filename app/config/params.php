@@ -7,3 +7,5 @@ define('DB_PASSWORD', 'root');
 
 $content = '';
 $title = '';
+
+define('DISPATCHER_NAME', 'index');

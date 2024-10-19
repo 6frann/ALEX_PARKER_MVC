@@ -11,6 +11,7 @@
     <meta name="robots" content="index,follow" />
 
     <title> <?php echo $title; ?> </title>
+    <base href="<?php echo BASE_PUBLIC_URL; ?>"
 
     <!-- Favicon -->
     <link rel="shortcut icon" href="images/favicon/favicon.ico" />
