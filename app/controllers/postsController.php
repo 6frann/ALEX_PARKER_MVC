@@ -12,3 +12,14 @@ function indexAction(PDO $connexion) {
     include_once '../app/views/posts/index.php';
     $content = ob_get_clean(); 
 }
+
+function showAction(PDO $connexion, int $id) {
+    include_once '../app/models/postsModel.php';
+    $post = PostsModel\findOneById($connexion, $id);
+    
+    GLOBAL $content, $title;
+    $title = 'Alex Parker -' . $post['title'];
+    ob_start();
+    include_once '../app/views/posts/show.php';
+    $content = ob_get_clean(); 
+}
