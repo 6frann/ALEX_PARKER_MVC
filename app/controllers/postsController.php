@@ -23,3 +23,11 @@ function showAction(PDO $connexion, int $id) {
     include_once '../app/views/posts/show.php';
     $content = ob_get_clean(); 
 }
+
+function formAction() {
+    GLOBAL $content, $title;
+    $title = 'Add a post';
+    ob_start();
+    include_once '../app/views/posts/form.php';
+    $content = ob_get_clean(); 
+}
