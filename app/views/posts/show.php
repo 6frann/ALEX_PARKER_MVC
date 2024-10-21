@@ -26,7 +26,7 @@
 
                     <!-- Post Detail Start -->
                     <div class="post-info">
-                      <span> <?php echo date_format(date_create($post['created_at']),"D M Y"); ?> </span> | <span><?php echo $post['name']; ?></span>
+                      <span> <?php echo date_format(date_create($post['created_at']),"D M Y"); ?> </span> | <span> life style </span>
                     </div>
                     <!-- Post Detail End -->
 

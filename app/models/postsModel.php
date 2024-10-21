@@ -11,11 +11,10 @@ function findAll(PDO $connexion): array {
     return $connexion->query($sql)->fetchAll(PDO::FETCH_ASSOC);
 }
 
-function findOneById(PDO $connexion, int $id) {
-    $sql = "SELECT*, p.id, c.id
-            FROM posts p
-            INNER JOIN categories c ON p.category_id = c.id           
-            WHERE p.id = :id;";
+function findOneById(PDO $connexion, int $id) :array {
+    $sql = "SELECT *
+            FROM posts
+            WHERE id = :id;";
 
     $rs = $connexion->prepare($sql);
     $rs->bindValue(':id', $id, PDO::PARAM_INT);
@@ -23,4 +22,22 @@ function findOneById(PDO $connexion, int $id) {
 
     return $rs->fetch(PDO::FETCH_ASSOC);         
 
+}
+
+function addOne(PDO $connexion, array $data): int {
+    
+    $sql = "INSERT INTO posts
+            SET title = :title,
+                text = :text,
+                quote = :quote,
+                image = :image,
+                created_at = NOW();";
+
+    $rs = $connexion->prepare($sql);
+    $rs->bindValue(':title', $data['title'], PDO::PARAM_STR);
+    $rs->bindValue(':text', $data['text'], PDO::PARAM_STR);
+    $rs->bindValue(':quote', $data['quote'], PDO::PARAM_STR);
+    $rs->bindValue(':image', $data['image'], PDO::PARAM_STR);
+    $rs->execute();
+    return $connexion->lastInsertId();
 }

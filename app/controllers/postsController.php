@@ -31,3 +31,10 @@ function formAction() {
     include_once '../app/views/posts/form.php';
     $content = ob_get_clean(); 
 }
+
+function addAction(PDO $connexion, array $data) {
+    include_once '../app/models/postsModel.php';
+    $id = PostsModel\addOne($connexion, $data);
+
+    header('Location: ' . BASE_PUBLIC_URL );
+}

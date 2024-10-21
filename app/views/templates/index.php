@@ -24,7 +24,7 @@
                 <div class="col-md-12 content-page">
                   <!-- ADD A POST -->
                   <div>
-                    <a href="posts/form.html" type="button" class="btn btn-primary"
+                    <a href="posts/add/form.html" type="button" class="btn btn-primary"
                       >Add a Post</a
                     >
                   </div>
