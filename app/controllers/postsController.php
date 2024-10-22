@@ -38,3 +38,14 @@ function addAction(PDO $connexion, array $data) {
 
     header('Location: ' . BASE_PUBLIC_URL );
 }
+
+function editFormAction(PDO $connexion, int $id) {
+    include_once '../app/models/postsModel.php';
+    $post = PostsModel\findOneById($connexion, $id);
+    
+    GLOBAL $content, $title;
+    $title = 'Alex Parker - Edit a post';
+    ob_start();
+    include_once '../app/views/posts/editForm.php';
+    $content = ob_get_clean(); 
+}
