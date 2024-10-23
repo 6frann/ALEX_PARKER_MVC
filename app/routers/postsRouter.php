@@ -18,4 +18,7 @@ switch ($_GET['posts']):
     case 'update':
         PostsController\updateFormAction($connexion, $_GET['id']);
         break;
+    case 'delete':
+        PostsController\deleteAction($connexion, $_GET['id']);
+        break;
 endswitch;

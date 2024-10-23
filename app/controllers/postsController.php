@@ -52,8 +52,14 @@ function editFormAction(PDO $connexion, int $id) {
 
 function updateFormAction(PDO $connexion, int $id) {
     include_once '../app/models/postsModel.php';
-    $post = PostsModel\updateOneById($connexion, $id, $_POST);
+    $response = PostsModel\updateOneById($connexion, $id, $_POST);
 
     header('Location: ' . BASE_PUBLIC_URL . 'posts/' . $id . '/' . \Core\Helpers\slugify($_POST['title']));
     exit;
+}
+function deleteAction(PDO $connexion, int $id) {
+    include_once '../app/models/postsModel.php';
+    $response = PostsModel\deleteOneById($connexion, $id);
+
+    header('Location: ' . BASE_PUBLIC_URL );
 }
