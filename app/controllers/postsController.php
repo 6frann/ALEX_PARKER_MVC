@@ -49,3 +49,11 @@ function editFormAction(PDO $connexion, int $id) {
     include_once '../app/views/posts/editForm.php';
     $content = ob_get_clean(); 
 }
+
+function updateFormAction(PDO $connexion, int $id) {
+    include_once '../app/models/postsModel.php';
+    $post = PostsModel\updateOneById($connexion, $id, $_POST);
+
+    header('Location: ' . BASE_PUBLIC_URL . 'posts/' . $id . '/' . \Core\Helpers\slugify($_POST['title']));
+    exit;
+}

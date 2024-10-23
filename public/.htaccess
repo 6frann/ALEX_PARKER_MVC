@@ -22,6 +22,10 @@ RewriteRule ^posts/add/insert.html$ index.php?posts=add [L]
 # URL: index.php?posts=edit
 RewriteRule ^posts/([1-9][0-9]*)/([a-z0-9\-]+)/edit/form.html$ index.php?posts=edit&id=$1 [L]
 
+# POSTS.UPDATE
+# PATTERN: /posts/id/slug-du-post/edit/update.html
+# URL: index.php?posts=update
+RewriteRule ^posts/([1-9][0-9]*)/([a-z0-9\-]+)/edit/update.html$ index.php?posts=update&id=$1 [L]
 
 
 #------------------------------------------------------------------------------------------

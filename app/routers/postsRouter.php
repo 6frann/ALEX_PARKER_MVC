@@ -15,4 +15,7 @@ switch ($_GET['posts']):
     case 'edit':
         PostsController\editFormAction($connexion, $_GET['id']);
         break;
+    case 'update':
+        PostsController\updateFormAction($connexion, $_GET['id']);
+        break;
 endswitch;

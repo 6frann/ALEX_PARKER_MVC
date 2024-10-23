@@ -20,7 +20,7 @@
                     <!-- Post Headline End -->
 
                     <!-- Form Start -->
-                    <form action="posts/<?php echo $post['id']; ?>/<?php echo \Core\Helpers\slugify($post['title']); ?>/edit/update.html" method="post">
+                    <form action=" posts/<?php echo $post['id']; ?>/<?php echo \Core\Helpers\slugify($post['title']); ?>/edit/update.html" method="POST">
                       <div class="form-group">
                         <label for="title">Title</label>
                         <input
@@ -41,7 +41,7 @@
                           rows="5"
                           placeholder="Enter your text here"
                           
-                        ><?php echo $post['title']; ?></textarea>
+                        ><?php echo $post['text']; ?></textarea>
                       </div>
                       <div class="form-group">
                         <label for="exampleFormControlFile1"> Image</label>
